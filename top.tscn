@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://3nm8ucwmu55v"]
 
 [ext_resource type="Script" uid="uid://votv5a8hv3s1" path="res://top.gd" id="1_rl3jk"]
+[ext_resource type="Texture2D" uid="uid://c74qkwig75ul1" path="res://black-orange-background-with-pattern-zigzag_993259-22636.jpg" id="2_on2c2"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_38se4"]
 bottom_radius = 0.0
 height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_on2c2"]
+albedo_texture = ExtResource("2_on2c2")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rl3jk"]
 points = PackedVector3Array(-0.15064138, 0.4821279, -0.467026, 0.4827243, 0.4827243, 0.09043992, 0.4827309, 0.4827309, -0.09044116, 0.014304251, -0.45953536, -0.014304251, -0.29696947, 0.4752256, 0.38609752, -0.4827243, 0.4827243, -0.09043992, 0.15064138, 0.4821279, 0.467026, 0.22498755, 0.48004863, -0.4350323, -0.46709776, 0.48229945, 0.15069498, -0.014304251, -0.45953536, 0.014304251, 0.37502894, 0.48011222, 0.3150619, -0.38609752, 0.4752256, -0.29696947, -0.0905294, 0.48269746, 0.48269746, 0.38611707, 0.4753642, -0.29705608, 0.09043992, 0.4827243, -0.4827243, -0.014304251, -0.45953536, -0.014304251, 0.014304251, -0.45953536, 0.014304251, -0.29696718, 0.47522193, -0.38609454, -0.38609454, 0.47522193, 0.29696718, 0.25786448, 0.42974418, 0.38675183, 0.4486248, 0.47860807, 0.19442281, 0.057735555, 0.43396834, 0.46297207, -0.46294743, 0.4339452, 0.057823114, -0.057823114, 0.4339452, -0.46294743, -0.4486248, 0.47860807, -0.19442281, -0.19442281, 0.47860807, 0.4486248, 0.44864032, 0.47862464, -0.19442955, 0.29696947, 0.4752256, -0.38609752, -0.22499481, 0.48006412, -0.43504634, -0.37083173, 0.34232682, 0.19962363, 0.46294743, 0.4339452, -0.057823114, 0.22499481, 0.48006412, 0.43504634)
@@ -17,6 +21,7 @@ body = NodePath("Body")
 
 [node name="Skin" type="MeshInstance3D" parent="Body" unique_id=1800899344]
 mesh = SubResource("CylinderMesh_38se4")
+surface_material_override/0 = SubResource("StandardMaterial3D_on2c2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2028703604]
 shape = SubResource("ConvexPolygonShape3D_rl3jk")

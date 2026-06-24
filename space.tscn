@@ -5,14 +5,25 @@
 [sub_resource type="BoxMesh" id="BoxMesh_38se4"]
 size = Vector3(200, 1, 80)
 
-[node name="Space" type="Node3D" unique_id=634961926]
+[sub_resource type="BoxShape3D" id="BoxShape3D_d5lh8"]
+size = Vector3(200, 1, 80)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=409391114]
-transform = Transform3D(4.35573, 0, 0, 0, 0.061270755, 0, 0, 0, 0.99174315, 0, 0, 0)
-mesh = SubResource("BoxMesh_38se4")
+[node name="Space" type="Node3D" unique_id=634961926]
 
 [node name="Top" parent="." unique_id=1670340319 instance=ExtResource("1_d5lh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8981942, 0)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1096064674]
-transform = Transform3D(1, 0, 0, 0, 0.96123767, 0.27572122, 0, -0.27572122, 0.96123767, 0, 1.9730206, 2.1649623)
+[node name="Camera3D" type="Camera3D" parent="Top" unique_id=1096064674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07482636, 3.1649623)
+
+[node name="platfor" type="RigidBody3D" parent="." unique_id=2104597305]
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="platfor" unique_id=409391114]
+mesh = SubResource("BoxMesh_38se4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platfor" unique_id=5944917]
+shape = SubResource("BoxShape3D_d5lh8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1106553913]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 12, 0)
