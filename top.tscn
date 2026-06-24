@@ -13,15 +13,36 @@ albedo_texture = ExtResource("2_on2c2")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rl3jk"]
 points = PackedVector3Array(-0.15064138, 0.4821279, -0.467026, 0.4827243, 0.4827243, 0.09043992, 0.4827309, 0.4827309, -0.09044116, 0.014304251, -0.45953536, -0.014304251, -0.29696947, 0.4752256, 0.38609752, -0.4827243, 0.4827243, -0.09043992, 0.15064138, 0.4821279, 0.467026, 0.22498755, 0.48004863, -0.4350323, -0.46709776, 0.48229945, 0.15069498, -0.014304251, -0.45953536, 0.014304251, 0.37502894, 0.48011222, 0.3150619, -0.38609752, 0.4752256, -0.29696947, -0.0905294, 0.48269746, 0.48269746, 0.38611707, 0.4753642, -0.29705608, 0.09043992, 0.4827243, -0.4827243, -0.014304251, -0.45953536, -0.014304251, 0.014304251, -0.45953536, 0.014304251, -0.29696718, 0.47522193, -0.38609454, -0.38609454, 0.47522193, 0.29696718, 0.25786448, 0.42974418, 0.38675183, 0.4486248, 0.47860807, 0.19442281, 0.057735555, 0.43396834, 0.46297207, -0.46294743, 0.4339452, 0.057823114, -0.057823114, 0.4339452, -0.46294743, -0.4486248, 0.47860807, -0.19442281, -0.19442281, 0.47860807, 0.4486248, 0.44864032, 0.47862464, -0.19442955, 0.29696947, 0.4752256, -0.38609752, -0.22499481, 0.48006412, -0.43504634, -0.37083173, 0.34232682, 0.19962363, 0.46294743, 0.4339452, -0.057823114, 0.22499481, 0.48006412, 0.43504634)
 
-[node name="Top" type="Node3D" unique_id=604659399 node_paths=PackedStringArray("body")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gosum"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hay7f"]
+material = SubResource("StandardMaterial3D_gosum")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38se4"]
+albedo_color = Color(0.7981183, 0.41465053, 5.7756904e-07, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k4os8"]
+material = SubResource("StandardMaterial3D_38se4")
+
+[node name="Top" type="RigidBody3D" unique_id=711918422 node_paths=PackedStringArray("body")]
 script = ExtResource("1_rl3jk")
-body = NodePath("Body")
+body = NodePath(".")
 
-[node name="Body" type="RigidBody3D" parent="." unique_id=313763509]
-
-[node name="Skin" type="MeshInstance3D" parent="Body" unique_id=1800899344]
+[node name="Skin" type="MeshInstance3D" parent="." unique_id=1889066378]
 mesh = SubResource("CylinderMesh_38se4")
 surface_material_override/0 = SubResource("StandardMaterial3D_on2c2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body" unique_id=2028703604]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1465759188]
 shape = SubResource("ConvexPolygonShape3D_rl3jk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=409683098]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.61633843, 0)
+
+[node name="Cover" type="MeshInstance3D" parent="." unique_id=376170134]
+transform = Transform3D(1, 0, 0, 0, 0.02, 0, 0, 0, 1, 0, 0.4884898, 0)
+mesh = SubResource("CylinderMesh_hay7f")
+
+[node name="Handle" type="MeshInstance3D" parent="." unique_id=559976646]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.5987167, 0)
+mesh = SubResource("CylinderMesh_k4os8")
