@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://votv5a8hv3s1" path="res://top.gd" id="1_rl3jk"]
 [ext_resource type="Texture2D" uid="uid://c74qkwig75ul1" path="res://black-orange-background-with-pattern-zigzag_993259-22636.jpg" id="2_on2c2"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtpbo"]
+friction = 0.01
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_38se4"]
 bottom_radius = 0.0
 height = 0.74072266
@@ -25,9 +28,9 @@ albedo_color = Color(0.7981183, 0.41465053, 5.7756904e-07, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_k4os8"]
 material = SubResource("StandardMaterial3D_38se4")
 
-[node name="Top" type="RigidBody3D" unique_id=711918422 node_paths=PackedStringArray("body")]
+[node name="Top" type="RigidBody3D" unique_id=711918422]
+physics_material_override = SubResource("PhysicsMaterial_qtpbo")
 script = ExtResource("1_rl3jk")
-body = NodePath(".")
 
 [node name="Skin" type="MeshInstance3D" parent="." unique_id=1889066378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12963867, 0)
