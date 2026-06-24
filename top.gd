@@ -5,7 +5,8 @@ extends RigidBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	body.add_constant_force(Vector3(10, 0, 0))
+
+	add_constant_force(Vector3(10, 0 ,0))
 	body.apply_torque(Vector3(0, 10000, 0))
 	
 
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	#pass
-	#body.apply_torque(Vector3(0, 100, 0))
+	body.apply_torque(Vector3(0, 100, 0))
 	gyroscopic_forces()
 
 func gyroscopic_forces() -> void:
