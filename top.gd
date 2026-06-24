@@ -5,11 +5,7 @@ extends RigidBody3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-<<<<<<< HEAD
-	body.apply_force(Vector3(1000, 0, 0))
-=======
 	add_constant_force(Vector3(10, 0 ,0))
->>>>>>> 78b5a96bc6da8b56ede78287254607c3857d253f
 	body.apply_torque(Vector3(0, 10000, 0))
 	
 
