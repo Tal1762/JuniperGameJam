@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b80ganh0v512f"]
+
+[ext_resource type="Texture2D" uid="uid://b1wjq45wb52rc" path="res://Game-geometric-pattern-backgroud-Graphics-83069347-1-580x387.jpg" id="1_lquvc"]
+
+[resource]
+albedo_texture = ExtResource("1_lquvc")
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+uv1_scale = Vector3(-0.305, -0.305, -0.305)
+uv1_triplanar = true

@@ -1,45 +1,46 @@
 [gd_scene format=3 uid="uid://cq4ofyamsal0a"]
 
 [ext_resource type="PackedScene" uid="uid://3nm8ucwmu55v" path="res://top.tscn" id="1_d5lh8"]
-[ext_resource type="Texture2D" uid="uid://b1wjq45wb52rc" path="res://Game-geometric-pattern-backgroud-Graphics-83069347-1-580x387.jpg" id="2_81phd"]
+[ext_resource type="Script" uid="uid://ck5ogrhoddyyd" path="res://camera_3d.gd" id="1_qtpbo"]
+[ext_resource type="Material" uid="uid://b80ganh0v512f" path="res://new_standard_material_3d.tres" id="2_81phd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_38se4"]
+material = ExtResource("2_81phd")
 size = Vector3(200, 1, 80)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5lh8"]
 size = Vector3(200, 1, 80)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81phd"]
-albedo_texture = ExtResource("2_81phd")
-backlight_enabled = true
-backlight = Color(1, 1, 1, 1)
-uv1_scale = Vector3(-0.305, -0.305, -0.305)
-uv1_triplanar = true
-
 [sub_resource type="BoxMesh" id="BoxMesh_hay7f"]
-material = SubResource("StandardMaterial3D_81phd")
+material = ExtResource("2_81phd")
 size = Vector3(104.755, 39.58841, 1)
 
 [node name="Space" type="Node3D" unique_id=634961926]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1096064674]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1096064674 node_paths=PackedStringArray("look_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068612576, 4.212004, 7.3481374)
+script = ExtResource("1_qtpbo")
+look_target = NodePath("../Top")
 
-[node name="Top" parent="." unique_id=1670340319 instance=ExtResource("1_d5lh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1787945, 0)
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Camera3D" unique_id=756294079]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.068612576, -6.257488, -7.3481374)
 
-[node name="platfor" type="RigidBody3D" parent="." unique_id=2104597305]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1106553913]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.068612576, 7.787996, -7.3481374)
+
+[node name="platform" type="RigidBody3D" parent="." unique_id=2104597305]
 freeze = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="platfor" unique_id=409391114]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="platform" unique_id=409391114]
 mesh = SubResource("BoxMesh_38se4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="platfor" unique_id=5944917]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platform" unique_id=5944917]
 shape = SubResource("BoxShape3D_d5lh8")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1106553913]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 12, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1519506924]
 transform = Transform3D(8.909714, 0, 0, 0, 4.9963913, 0, 0, 0, 2.1581802, -3.6399403, 42.448776, -17.832928)
 mesh = SubResource("BoxMesh_hay7f")
+
+[node name="Top" parent="." unique_id=711918422 instance=ExtResource("1_d5lh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3678565, 0)
+stability_factor = 1.2
