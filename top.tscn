@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c74qkwig75ul1" path="res://black-orange-background-with-pattern-zigzag_993259-22636.jpg" id="2_on2c2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtpbo"]
-friction = 0.01
+friction = 0.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_38se4"]
 bottom_radius = 0.0
