@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://3nm8ucwmu55v"]
+
+[ext_resource type="Script" uid="uid://votv5a8hv3s1" path="res://top.gd" id="1_rl3jk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_38se4"]
+bottom_radius = 0.0
+height = 1.0
+
+[node name="Top" type="Node3D" unique_id=604659399]
+script = ExtResource("1_rl3jk")
+
+[node name="Body" type="RigidBody3D" parent="." unique_id=313763509]
+
+[node name="Skin" type="MeshInstance3D" parent="Body" unique_id=1800899344]
+mesh = SubResource("CylinderMesh_38se4")
