@@ -11,8 +11,8 @@ size = Vector3(200, 1, 80)
 transform = Transform3D(4.35573, 0, 0, 0, 0.061270755, 0, 0, 0, 0.99174315, 0, 0, 0)
 mesh = SubResource("BoxMesh_38se4")
 
-[node name="Top2" parent="." unique_id=604659399 instance=ExtResource("1_d5lh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8981943, 0)
-
 [node name="Top" parent="." unique_id=1670340319 instance=ExtResource("1_d5lh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8981942, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1096064674]
+transform = Transform3D(1, 0, 0, 0, 0.96123767, 0.27572122, 0, -0.27572122, 0.96123767, 0, 1.9730206, 2.1649623)
