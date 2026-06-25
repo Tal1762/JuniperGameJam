@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(top: Top) -> void:
 	top.inc_pseudo_speed(speed_inc)
+	queue_free()

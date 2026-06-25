@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://b80ganh0v512f" path="res://new_standard_material_3d.tres" id="2_81phd"]
 [ext_resource type="PackedScene" uid="uid://chreffqw7kr7f" path="res://bounce_pad.tscn" id="4_rxlph"]
 [ext_resource type="PackedScene" uid="uid://cnyvu8rv585u6" path="res://speed_bar.tscn" id="5_ulv8f"]
+[ext_resource type="PackedScene" uid="uid://dd8seuheigv7x" path="res://tornado.tscn" id="6_w5eul"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_38se4"]
 material = ExtResource("2_81phd")
@@ -61,6 +62,7 @@ mesh = SubResource("BoxMesh_hay7f")
 
 [node name="Top" parent="." unique_id=711918422 instance=ExtResource("1_d5lh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3678565, 0)
+can_sleep = true
 stability_factor = 1.2
 
 [node name="Bounce Pad" parent="." unique_id=520150788 instance=ExtResource("4_rxlph")]
@@ -68,3 +70,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.55, 0)
 
 [node name="SpeedBar" parent="." unique_id=553177468 node_paths=PackedStringArray("player") instance=ExtResource("5_ulv8f")]
 player = NodePath("../Top")
+
+[node name="Tornado" parent="." unique_id=715637884 instance=ExtResource("6_w5eul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51737, 1.4833992, 0)
+
+[node name="Tornado2" parent="." unique_id=1364335532 instance=ExtResource("6_w5eul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.118111, 1.4833992, 0)
+
+[node name="Tornado3" parent="." unique_id=591951771 instance=ExtResource("6_w5eul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.812227, 1.4833992, 0)
+
+[node name="Tornado4" parent="." unique_id=886211090 instance=ExtResource("6_w5eul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6670666, 1.4833992, 0)

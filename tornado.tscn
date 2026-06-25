@@ -33,4 +33,7 @@ material_override = SubResource("StandardMaterial3D_phyje")
 mesh = ExtResource("2_ohrl4")
 script = ExtResource("3_xk6o3")
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1607806800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
