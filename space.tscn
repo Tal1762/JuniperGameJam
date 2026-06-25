@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ck5ogrhoddyyd" path="res://camera_3d.gd" id="1_qtpbo"]
 [ext_resource type="Material" uid="uid://b80ganh0v512f" path="res://new_standard_material_3d.tres" id="2_81phd"]
 [ext_resource type="PackedScene" uid="uid://chreffqw7kr7f" path="res://bounce_pad.tscn" id="4_rxlph"]
+[ext_resource type="PackedScene" uid="uid://cnyvu8rv585u6" path="res://speed_bar.tscn" id="5_ulv8f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_38se4"]
 material = ExtResource("2_81phd")
@@ -42,10 +43,11 @@ shape = SubResource("BoxShape3D_d5lh8")
 transform = Transform3D(8.909714, 0, 0, 0, 4.9963913, 0, 0, 0, 2.1581802, -3.6399403, 42.448776, -17.832928)
 mesh = SubResource("BoxMesh_hay7f")
 
-[node name="Top" parent="." unique_id=711918422 node_paths=PackedStringArray("body") instance=ExtResource("1_d5lh8")]
+[node name="Top" parent="." unique_id=711918422 instance=ExtResource("1_d5lh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3678565, 0)
-body = NodePath(".")
 stability_factor = 1.2
 
 [node name="Bounce Pad" parent="." unique_id=520150788 instance=ExtResource("4_rxlph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.55, 0)
+
+[node name="SpeedBar" parent="." unique_id=553177468 instance=ExtResource("5_ulv8f")]
