@@ -1,3 +1,4 @@
+class_name SpeedBar
 extends Control
 
 

@@ -1,11 +1,11 @@
 class_name Top
 extends RigidBody3D
 
-@export var stability_factor:float = 1.5
+@export var stability_factor:float = 4
 @export var terminal_velocity:float = 15.0
 @export var velocity:float = 15.0
-@export var continous_spin:float = 100.0
-
+const continous_spin:float = .5
+@export var pseudo_speed:float = 80
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	apply_torque(Vector3(0, 10000, 0))
@@ -50,4 +50,8 @@ func friction() -> void:
 	#apply_torque(Vector3(0, -10 * angular_velocity.y / 100 ,0))
 
 func get_ang_y_vel() -> float:
-	return angular_velocity.y
+	return pseudo_speed
+
+func inc_pseudo_speed(inc:float):
+	pseudo_speed += inc
+	#if pseudo_speed > x:

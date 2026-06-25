@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is not RigidBody3D:
 		return
-	body.apply_force(Vector3(0,500,0))
+	body.apply_central_force(Vector3(0,500,0))

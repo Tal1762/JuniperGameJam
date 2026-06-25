@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3nm8ucwmu55v" path="res://top.tscn" id="1_hn12h"]
 [ext_resource type="Script" uid="uid://ck5ogrhoddyyd" path="res://camera_3d.gd" id="2_hbghi"]
 [ext_resource type="PackedScene" uid="uid://chreffqw7kr7f" path="res://bounce_pad.tscn" id="4_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://cnyvu8rv585u6" path="res://speed_bar.tscn" id="5_rka8t"]
 
 [sub_resource type="Gradient" id="Gradient_hbghi"]
 offsets = PackedFloat32Array(0, 0.23067908, 0.69378006, 1)
@@ -61,3 +62,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.06
 
 [node name="Bounce Pad" parent="." unique_id=520150788 instance=ExtResource("4_ihfcg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1253, 0.500292, 0)
+
+[node name="SpeedBar" parent="." unique_id=553177468 node_paths=PackedStringArray("player") instance=ExtResource("5_rka8t")]
+player = NodePath("../Top")
