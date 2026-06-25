@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@export var stability_factor:float = .7
+@export var stability_factor:float = 1.5
 @export var terminal_velocity:float = 15.0
 @export var velocity:float = 15.0
 
@@ -43,3 +43,6 @@ func friction() -> void:
 	if abs(linear_velocity.x) < 0.1:
 		linear_velocity.x = 0
 	apply_central_force(Vector3(-10 * linear_velocity.x / 7, 0 ,0))
+	if abs(angular_velocity.y) < 0.1:
+		angular_velocity.y = 0
+	apply_torque(Vector3(0, -10 * angular_velocity.y / 100 ,0))
