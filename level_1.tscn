@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dghgpttasvjf"]
+
+[ext_resource type="Texture2D" uid="uid://mognm8s5tnu0" path="res://grid/PNG/Orange/texture_01.png" id="1_3hls8"]
+[ext_resource type="PackedScene" uid="uid://3nm8ucwmu55v" path="res://top.tscn" id="1_hn12h"]
+[ext_resource type="Script" uid="uid://ck5ogrhoddyyd" path="res://camera_3d.gd" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://chreffqw7kr7f" path="res://bounce_pad.tscn" id="4_ihfcg"]
+
+[sub_resource type="Gradient" id="Gradient_hbghi"]
+offsets = PackedFloat32Array(0, 0.23067908, 0.69378006, 1)
+colors = PackedColorArray(0.2467275, 0.2595657, 0.74000525, 1, 0.92156863, 0.2, 0.73333335, 1, 0.92156863, 0.2, 0.73333335, 1, 0.24705882, 0.25882354, 0.7411765, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hn12h"]
+gradient = SubResource("Gradient_hbghi")
+fill_from = Vector2(0.20387001, 0.01683312)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ihfcg"]
+panorama = SubResource("GradientTexture2D_hn12h")
+
+[sub_resource type="Sky" id="Sky_rka8t"]
+sky_material = SubResource("PanoramaSkyMaterial_ihfcg")
+
+[sub_resource type="Environment" id="Environment_5hph3"]
+background_mode = 2
+sky = SubResource("Sky_rka8t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7kpp"]
+albedo_texture = ExtResource("1_3hls8")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="level1" type="Node3D" unique_id=1717026431]
+
+[node name="Top" parent="." unique_id=711918422 instance=ExtResource("1_hn12h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9245739, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=628552121]
+environment = SubResource("Environment_5hph3")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=859366199]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=330983614]
+size = Vector3(49.243164, 1, 19.007568)
+material = SubResource("StandardMaterial3D_j7kpp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1360616255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.609, 0)
+size = Vector3(28.824219, 2.2177734, 19.008)
+material = SubResource("StandardMaterial3D_j7kpp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1306506663 node_paths=PackedStringArray("look_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25037527, 4.212004, 6.5690236)
+script = ExtResource("2_hbghi")
+look_target = NodePath("../Top")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Camera3D" unique_id=198661519]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.068612576, -6.257488, -7.3481374)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1433913459]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.068612576, 7.787996, -7.3481374)
+
+[node name="Bounce Pad" parent="." unique_id=520150788 instance=ExtResource("4_ihfcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.294483, 0.55, -2.7286358)

@@ -13,6 +13,11 @@ size = Vector3(200, 1, 80)
 [sub_resource type="BoxShape3D" id="BoxShape3D_d5lh8"]
 size = Vector3(200, 1, 80)
 
+[sub_resource type="BoxMesh" id="BoxMesh_rxlph"]
+material = ExtResource("2_81phd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxlph"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_hay7f"]
 material = ExtResource("2_81phd")
 size = Vector3(104.755, 39.58841, 1)
@@ -38,6 +43,17 @@ mesh = SubResource("BoxMesh_38se4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="platform" unique_id=5944917]
 shape = SubResource("BoxShape3D_d5lh8")
+
+[node name="platform2" type="RigidBody3D" parent="." unique_id=1866790540]
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="platform2" unique_id=365773577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.614112, 1.0652394, 0)
+mesh = SubResource("BoxMesh_rxlph")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platform2" unique_id=820543537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.614112, 1.0652394, 0)
+shape = SubResource("BoxShape3D_rxlph")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1519506924]
 transform = Transform3D(8.909714, 0, 0, 0, 4.9963913, 0, 0, 0, 2.1581802, -3.6399403, 42.448776, -17.832928)
