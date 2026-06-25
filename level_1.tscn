@@ -60,4 +60,4 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.06
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.068612576, 7.787996, -7.3481374)
 
 [node name="Bounce Pad" parent="." unique_id=520150788 instance=ExtResource("4_ihfcg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.294483, 0.55, -2.7286358)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1253, 0.500292, 0)

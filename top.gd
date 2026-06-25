@@ -4,7 +4,7 @@ extends RigidBody3D
 @export var stability_factor:float = 1.5
 @export var terminal_velocity:float = 15.0
 @export var velocity:float = 15.0
-@export var initial_spin:float = 15.0
+@export var continous_spin:float = 100.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	#pass
-	apply_torque(Vector3(0, 10, 0))
+	apply_torque(Vector3(0, continous_spin, 0))
 	friction()
 	movement()
 	gyroscopic_forces()
