@@ -1,3 +1,4 @@
+class_name BouncePad
 extends Area3D
 
 

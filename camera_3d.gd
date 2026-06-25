@@ -12,6 +12,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Smoothly move towards target position
 	global_position = global_position.lerp(Vector3(look_target.global_position.x, position.y, position.z), follow_speed * delta)
-
-	# Smoothly rotate to look at target
-	#look_at(look_target.global_position)
