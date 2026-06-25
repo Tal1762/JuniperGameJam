@@ -66,4 +66,5 @@ stability_factor = 1.2
 [node name="Bounce Pad" parent="." unique_id=520150788 instance=ExtResource("4_rxlph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.55, 0)
 
-[node name="SpeedBar" parent="." unique_id=553177468 instance=ExtResource("5_ulv8f")]
+[node name="SpeedBar" parent="." unique_id=553177468 node_paths=PackedStringArray("player") instance=ExtResource("5_ulv8f")]
+player = NodePath("../Top")

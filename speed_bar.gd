@@ -5,8 +5,8 @@ extends Control
 func _ready() -> void:
 	pass # Replace with function body.
 
-@onready var progress_bar = $ProgressBar
-@onready var player = $Player  # The node with velocity
+@onready var progress_bar = $Gauge
+@export var player:Top
 
 var max_speed = 400.0  # Maximum speed for full bar
 

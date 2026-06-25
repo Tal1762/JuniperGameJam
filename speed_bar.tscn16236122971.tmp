@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cnyvu8rv585u6"]
+
+[ext_resource type="Texture2D" uid="uid://5cklhdaiijl6" path="res://dark_sideways_black-orange-background-with-pattern-zigzag_993259-22636.jpg" id="1_0t46f"]
+[ext_resource type="Texture2D" uid="uid://20mf0k8imvud" path="res://sideways_black-orange-background-with-pattern-zigzag_993259-22636.jpg" id="1_a7fh5"]
+[ext_resource type="Script" uid="uid://bvmh76202txe8" path="res://speed_bar.gd" id="1_vpsb5"]
+
+[node name="SpeedBar" type="Control" unique_id=553177468]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 425.0
+offset_top = 550.0
+offset_right = 465.0
+offset_bottom = 590.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vpsb5")
+
+[node name="Bar" type="HBoxContainer" parent="." unique_id=1991860286]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Count" type="MarginContainer" parent="Bar" unique_id=1744202130]
+layout_mode = 2
+
+[node name="Background" type="NinePatchRect" parent="Bar/Count" unique_id=2052479353]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="Bar/Count" unique_id=1792365889]
+layout_mode = 2
+
+[node name="Number" type="Label" parent="Bar/Count" unique_id=1626884789]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.7764706, 0.72156864, 1)
+theme_override_font_sizes/font_size = 48
+text = "Velocity"
+
+[node name="Gauge" type="TextureProgressBar" parent="." unique_id=1262170033]
+layout_mode = 0
+offset_left = 196.0
+offset_top = -22.0
+offset_right = 613.0
+offset_bottom = 107.0
+value = 50.0
+allow_greater = true
+texture_under = ExtResource("1_0t46f")
+texture_progress = ExtResource("1_a7fh5")
