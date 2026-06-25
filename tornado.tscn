@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://d2ecpyc4dvw5l" path="res://tornado.gd" id="1_ohrl4"]
 [ext_resource type="ArrayMesh" uid="uid://3w3eb1t7o88v" path="res://tornado1.obj" id="2_ohrl4"]
 [ext_resource type="Script" uid="uid://xvnbrmbshwcg" path="res://layer.gd" id="3_xk6o3"]
+[ext_resource type="TorusMesh" uid="uid://dujmalynkv7x4" path="res://tornado_mesh.tres" id="5_5nx0n"]
+[ext_resource type="Script" uid="uid://bg7tyeqa4yrd8" path="res://tornado_particles.gd" id="5_xk6o3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8kgn"]
 albedo_texture = ExtResource("1_b05kn")
@@ -16,6 +18,9 @@ radius = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phyje"]
 albedo_texture = ExtResource("1_b05kn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ohrl4"]
+gravity = Vector3(0, 2, 0)
 
 [node name="Tornado" type="Area3D" unique_id=715637884]
 script = ExtResource("1_ohrl4")
@@ -33,7 +38,13 @@ material_override = SubResource("StandardMaterial3D_phyje")
 mesh = ExtResource("2_ohrl4")
 script = ExtResource("3_xk6o3")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1607806800]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+[node name="tornado_particles" type="GPUParticles3D" parent="." unique_id=1351648358]
+process_material = SubResource("ParticleProcessMaterial_ohrl4")
+draw_pass_1 = ExtResource("5_5nx0n")
+script = ExtResource("5_xk6o3")
+tornadoparticles = ExtResource("5_5nx0n")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1431270605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1143168, 2)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

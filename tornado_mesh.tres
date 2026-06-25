@@ -1,0 +1,11 @@
+[gd_resource type="TorusMesh" format=3 uid="uid://dujmalynkv7x4"]
+
+[ext_resource type="Texture2D" uid="uid://dqesrxx0vado0" path="res://tornado.png" id="1_1njhn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5nx0n"]
+albedo_texture = ExtResource("1_1njhn")
+
+[resource]
+material = SubResource("StandardMaterial3D_5nx0n")
+inner_radius = 0.568
+outer_radius = 0.623

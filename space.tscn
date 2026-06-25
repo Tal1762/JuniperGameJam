@@ -72,13 +72,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.55, 0)
 player = NodePath("../Top")
 
 [node name="Tornado" parent="." unique_id=715637884 instance=ExtResource("6_w5eul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51737, 1.4833992, 0)
-
-[node name="Tornado2" parent="." unique_id=1364335532 instance=ExtResource("6_w5eul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.118111, 1.4833992, 0)
-
-[node name="Tornado3" parent="." unique_id=591951771 instance=ExtResource("6_w5eul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.812227, 1.4833992, 0)
-
-[node name="Tornado4" parent="." unique_id=886211090 instance=ExtResource("6_w5eul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6670666, 1.4833992, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8952186, 1.4268758, 0)
